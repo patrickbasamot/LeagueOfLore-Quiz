@@ -29,11 +29,25 @@ choce_b.innerText = currentQuizData.b;
 choce_c.innerText = currentQuizData.c;
 choce_d.innerText = currentQuizData.d;
 
-submitBtn.addEventListener('click',function(){
- 
+function selectedChoice(){
+    let correctChoice;
     choice.forEach( choice =>{
         if(choice.checked){
-            console.log(choice.id);
+           correctChoice = choice.id;
         }
-    })
+    
 })
+return correctChoice;
+}
+
+submitBtn.addEventListener('click',() => {
+        const userChoice = selectedChoice();
+        console.log(userChoice);
+        if(userChoice){
+             if(userChoice === quiz[currentQuiz].correct){
+                console.log('wowo');
+                }
+
+    }
+
+    })
